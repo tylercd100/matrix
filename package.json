@@ -1,0 +1,30 @@
+{
+  "name": "matrix",
+  "version": "0.0.1",
+  "description": "A Javascript Library to perform basic matrix operations using the functional nature of Javascript",
+  "main": "lib",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raghavgujjar/matrix.git"
+  },
+  "keywords": [
+    "matrix",
+    "linear",
+    "algebra"
+  ],
+  "author": "Raghavendra Ravikumar <raghavendra.ravikumar@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raghavgujjar/matrix/issues"
+  },
+  "homepage": "https://github.com/raghavgujjar/matrix#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
