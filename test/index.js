@@ -24,19 +24,25 @@ describe('Matrix GET and SIZE method', () => {
     });
 
     it('should return back the matrix', () => {
-        assert.deepEqual(mat().get(), a);
+        assert.deepEqual(mat().read(), a);
     });
 
     it('should return a single element', () => {
-        assert.equal(mat(0, 0).get(), 1);
+        assert.equal(mat(0, 0).read(), 1);
     });
 
     it('should return a row', () => {
-        assert.deepEqual(mat(0).get(), [1, 2, 3]);
+        assert.deepEqual(mat(0).read(), [1, 2, 3]);
     });
     
     it('should return column', () => {
-       assert.deepEqual(mat([],0).get(), [[1],[4]]); 
+       assert.deepEqual(mat([],0).read(), [[1],[4]]); 
+    });
+    
+    it('should return in specified range', () => {
+       assert.deepEqual(mat([1,0],[2,1]).read(), [[6, 5], [3, 2]]);
+       assert.deepEqual(mat(0,[2,1]).read(), [3, 2]);
+       assert.deepEqual(mat([1,0],1).read(), [[5], [2]]);
     });
 });
 

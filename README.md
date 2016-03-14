@@ -26,7 +26,7 @@ A([], 0).read(); // returns [[1][4][7]]
 ```javascript
 A(1, 2).read(); // returns 3
 ```
-####5. Range*
+####5. Range
 ```javascript
 A([1,2]).read(); // returns [[4, 5, 6], [7, 8, 9]]
 A([],[1,2]).read(); // returns [[2, 3], [5, 6], [8, 9]]
