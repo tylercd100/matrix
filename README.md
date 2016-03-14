@@ -12,28 +12,28 @@ var A = matrix(a);
 ###Operations
 ####1. Identity
 ```javascript
-A().get(); //returns [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+A().read(); //returns [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ```
 ####2. Row
 ```javascript
-A(0).get(); // returns [1, 2, 3]
+A(0).read(); // returns [1, 2, 3]
 ```
 ####3. Column
 ```javascript
-A([], 0).get(); // returns [[1][4][7]]
+A([], 0).read(); // returns [[1][4][7]]
 ```
 ####4. Element
 ```javascript
-A(1, 2).get(); // returns 3
+A(1, 2).read(); // returns 3
 ```
 ####5. Range*
 ```javascript
-A([1,2]).get(); // returns [[4, 5, 6], [7, 8, 9]]
-A([],[1,2]).get(); // returns [[2, 3], [5, 6], [8, 9]]
-A([1,2],[1,2]).get(); // returns [[5, 6], [8, 9]]
-A([2,1],[]).get(); // returns [[7, 8, 9], [4, 5 ,6]]
-A([],[2,1]).get(); // returns [[3, 2], [6, 5], [9, 8]]
-A([2,1],[2,1]).get(); // returns [[9, 8], [6, 5]]
+A([1,2]).read(); // returns [[4, 5, 6], [7, 8, 9]]
+A([],[1,2]).read(); // returns [[2, 3], [5, 6], [8, 9]]
+A([1,2],[1,2]).read(); // returns [[5, 6], [8, 9]]
+A([2,1],[]).read(); // returns [[7, 8, 9], [4, 5 ,6]]
+A([],[2,1]).read(); // returns [[3, 2], [6, 5], [9, 8]]
+A([2,1],[2,1]).read(); // returns [[9, 8], [6, 5]]
 ```
 ####6. Size
 ```javascript
