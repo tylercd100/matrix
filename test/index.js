@@ -44,5 +44,10 @@ describe('Matrix GET and SIZE method', () => {
        assert.deepEqual(mat(0,[2,1]).read(), [3, 2]);
        assert.deepEqual(mat([1,0],1).read(), [[5], [2]]);
     });
+    
+    it('should replace the specified index', () => {
+       assert.deepEqual(mat(1).replace(8), [[1,2,3], [8,8,8]]); 
+       assert.deepEqual(mat(1,2).replace(8), [[1,2,3], [4,5,8]]);
+    });
 });
 
