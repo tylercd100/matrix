@@ -41,12 +41,13 @@ A().size(); //returns [3, 3]
 A([],0).size(); // returns [3, 1]
 A(0).size(); // returns [3]
 ```
-####7. Change*
+####7. Replace
 ```javascript
-A(0).set(0); // returns [[0, 0, 0], [4, 5, 6], [7, 8, 9]]
-A([], 0).set(0); // returns [[0, 2, 3], [0, 5, 6], [0, 8, 9]]
-A([1,2]).set(4); // returns [[1, 2, 3], [4, 4, 4], [4, 4, 4]]
-A([], [1,2]).set(1); // returns [[1, 1, 1], [4, 1, 1], [7, 1, 1]]
+A(0).replace(0); // returns [[0, 0, 0], [4, 5, 6], [7, 8, 9]]
+A(1,2).replace(10); // returns [[0, 0, 0], [4, 5, 10], [7, 8, 9]]
+*A([], 0).replace(0); // returns [[0, 2, 3], [0, 5, 6], [0, 8, 9]]
+*A([1,2]).replace(4); // returns [[1, 2, 3], [4, 4, 4], [4, 4, 4]]
+*A([], [1,2]).replace(1); // returns [[1, 1, 1], [4, 1, 1], [7, 1, 1]]
 ```
 ####8. Addition*
 ```javascript
