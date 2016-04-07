@@ -2,7 +2,7 @@
 
 const matrix = require('../lib');
 const assert = require('assert');
-let a, mat;
+let a, a1, mat, mat1;
 
 it('should exist', () => {
     assert.ok(matrix);
@@ -14,8 +14,10 @@ it('should throw not array', () => {
 
 describe('Matrix GET and SIZE method', () => {
     before(() => {
-        a = [[1, 2, 3], [4, 5, 6]]
+        a = [[1, 2, 3], [4, 5, 6]];
+        a1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         mat = matrix(a);
+        mat1 = matrix(a1);
     });
     it('should return size', () => {
         assert.deepEqual(mat().size(), [2, 3]);
@@ -48,6 +50,9 @@ describe('Matrix GET and SIZE method', () => {
     it('should replace the specified index', () => {
        assert.deepEqual(mat(1).replace(8), [[1,2,3], [8,8,8]]); 
        assert.deepEqual(mat(1,2).replace(8), [[1,2,3], [4,5,8]]);
+       assert.deepEqual(mat([],1).replace(8), [[1,8,3], [4,8,6]]);
+       assert.deepEqual(mat1([],[1,2]).replace(8), [[1,8,8], [4,8,8], [7,8,8]]);
+       assert.deepEqual(mat1([1,2],[1,2]).replace(8), [[1,2,3], [4,8,8], [7,8,8]]);
     });
 });
 
