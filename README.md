@@ -49,20 +49,20 @@ A([], 0).replace(0); // returns [[0, 2, 3], [0, 5, 6], [0, 8, 9]]
 A([1,2]).replace(4); // returns [[1, 2, 3], [4, 4, 4], [4, 4, 4]]
 A([], [1,2]).replace(1); // returns [[1, 1, 1], [4, 1, 1], [7, 1, 1]]
 ```
-####8. Addition*
+####8. Addition
 ```javascript
 var B = matrix([[3, 4, 5], [6, 7, 8], [9, 10, 11]]);
 A().add(B); // returns [[4, 6, 8],[10, 12, 14], [16, 18, 20]]
 ```
-####9. Subtraction*
+####9. Subtraction
 ```javascript
 B().sub(A); // returns [[2, 2, 2], [2, 2, 2], [2, 2, 2]]
 ```
-####10. Multiplication*
+####10. Multiplication
 ```javascript
 A().mul(B); // returns [[3, 8, 15], [24, 35, 48], [56, 80, 99]]
 ```
-####11. Division*
+####11. Division
 ```javascript
 A().div(B); // returns [[0.33, 0.5, 0.6], [0.66, 0.71, 0.75], [0.77, 0.8, 0.81]]
 ```

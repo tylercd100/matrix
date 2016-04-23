@@ -2,7 +2,7 @@
 
 const matrix = require('../lib');
 const assert = require('assert');
-let a, a1, mat, mat1;
+let a, a1, a2, mat, mat1, mat2, m;
 
 it('should exist', () => {
     assert.ok(matrix);
@@ -12,12 +12,15 @@ it('should throw not array', () => {
     assert.throws(matrix, 'Input should be of type array');
 });
 
-describe('Matrix GET and SIZE method', () => {
+describe('Matrix operations', () => {
     before(() => {
         a = [[1, 2, 3], [4, 5, 6]];
         a1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        a2 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
+        m = matrix([[2, 2, 2], [2, 2, 2], [2, 2, 2]]);
         mat = matrix(a);
         mat1 = matrix(a1);
+        mat2 = matrix(a2);       
     });
     it('should return size', () => {
         assert.deepEqual(mat().size(), [2, 3]);
@@ -54,5 +57,20 @@ describe('Matrix GET and SIZE method', () => {
        assert.deepEqual(mat1([],[1,2]).replace(8), [[1,8,8], [4,8,8], [7,8,8]]);
        assert.deepEqual(mat1([1,2],[1,2]).replace(8), [[1,2,3], [4,8,8], [7,8,8]]);
     });
+    
+    it('should add two matrices', () => {
+        assert.deepEqual(mat1().add(mat2), [[2, 3, 4], [5, 6, 7], [8, 9, 10]]);
+    });
+    
+    it('should subtract two matrices', () => {
+       assert.deepEqual(mat1().sub(mat2), [[0, 1, 2], [3, 4, 5], [6, 7, 8]]); 
+    });
+    
+    it('should find scalar product two matrices', () => {
+       assert.deepEqual(mat1().mul(m), [[2, 4, 6], [8, 10, 12], [14, 16, 18]]); 
+    });
+    
+    it('should divide each element of two matrices', () => {
+       assert.deepEqual(mat1().div(m), [[0.5, 1, 1.5], [2, 2.5, 3], [3.5, 4, 4.5]]); 
+    });
 });
-
