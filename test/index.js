@@ -73,4 +73,8 @@ describe('Matrix operations', () => {
     it('should divide each element of two matrices', () => {
        assert.deepEqual(mat1().div(m), [[0.5, 1, 1.5], [2, 2.5, 3], [3.5, 4, 4.5]]); 
     });
+    
+    it('should find the product of two matrices', () => {
+       assert.deepEqual(mat1().prod(mat2), [[6, 6, 6], [15, 15, 15], [24, 24, 24]]); 
+    });
 });
