@@ -77,4 +77,9 @@ describe('Matrix operations', () => {
     it('should find the product of two matrices', () => {
        assert.deepEqual(mat1().prod(mat2), [[6, 6, 6], [15, 15, 15], [24, 24, 24]]); 
     });
+    
+    it('should return the transpose of a matrix', () => {
+       assert.deepEqual(mat().trans(), [[1, 4], [2, 5], [3, 6]]);
+       assert.deepEqual(mat1().trans(), [[1, 4, 7], [2, 5, 8], [3, 6, 9]]); 
+    });
 });
