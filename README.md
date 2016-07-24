@@ -66,11 +66,11 @@ A.mul(B); // returns [[3, 8, 15], [24, 35, 48], [56, 80, 99]]
 ```javascript
 A.div(B); // returns [[0.33, 0.5, 0.6], [0.66, 0.71, 0.75], [0.77, 0.8, 0.81]]
 ```
-####12. Product*
+####12. Product
 ```javascript
 A.prod(B); // returns [[42, 48, 54], [96, 111, 126], [150, 174, 198]]
 ```
-####13. Transpose*
+####13. Transpose
 ```javascript
 A.trans(); // returns [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
