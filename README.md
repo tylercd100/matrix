@@ -12,77 +12,75 @@ var A = matrix(a);
 ###Operations
 ####1. Identity
 ```javascript
-A().read(); //returns [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+A(); //returns [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ```
 ####2. Row
 ```javascript
-A(0).read(); // returns [1, 2, 3]
+A(0); // returns [1, 2, 3]
 ```
 ####3. Column
 ```javascript
-A([], 0).read(); // returns [[1][4][7]]
+A([], 0); // returns [[1][4][7]]
 ```
 ####4. Element
 ```javascript
-A(1, 2).read(); // returns 3
+A(1, 2); // returns 3
 ```
 ####5. Range
 ```javascript
-A([1,2]).read(); // returns [[4, 5, 6], [7, 8, 9]]
-A([],[1,2]).read(); // returns [[2, 3], [5, 6], [8, 9]]
-A([1,2],[1,2]).read(); // returns [[5, 6], [8, 9]]
-A([2,1],[]).read(); // returns [[7, 8, 9], [4, 5 ,6]]
-A([],[2,1]).read(); // returns [[3, 2], [6, 5], [9, 8]]
-A([2,1],[2,1]).read(); // returns [[9, 8], [6, 5]]
+A([1,2]); // returns [[4, 5, 6], [7, 8, 9]]
+A([],[1,2]); // returns [[2, 3], [5, 6], [8, 9]]
+A([1,2],[1,2]); // returns [[5, 6], [8, 9]]
+A([2,1],[]); // returns [[7, 8, 9], [4, 5 ,6]]
+A([],[2,1]); // returns [[3, 2], [6, 5], [9, 8]]
+A([2,1],[2,1]); // returns [[9, 8], [6, 5]]
 ```
 ####6. Size
 ```javascript
-A().size(); //returns [3, 3]
-A([],0).size(); // returns [3, 1]
-A(0).size(); // returns [3]
+A.size(); //returns [3, 3]
 ```
-####7. Replace
+####7. Set
 ```javascript
-A(0).replace(0); // returns [[0, 0, 0], [4, 5, 6], [7, 8, 9]]
-A(1,2).replace(10); // returns [[1, 2, 3], [4, 5, 10], [7, 8, 9]]
-A([], 0).replace(0); // returns [[0, 2, 3], [0, 5, 6], [0, 8, 9]]
-A([1,2]).replace(4); // returns [[1, 2, 3], [4, 4, 4], [4, 4, 4]]
-A([], [1,2]).replace(1); // returns [[1, 1, 1], [4, 1, 1], [7, 1, 1]]
+A.set(0).to(0); // returns [[0, 0, 0], [4, 5, 6], [7, 8, 9]]
+A.set(1,2).to(10); // returns [[1, 2, 3], [4, 5, 10], [7, 8, 9]]
+A.set([], 0).to(0); // returns [[0, 2, 3], [0, 5, 6], [0, 8, 9]]
+A.set([1,2]).to(4); // returns [[1, 2, 3], [4, 4, 4], [4, 4, 4]]
+A.set([], [1,2]).to(1); // returns [[1, 1, 1], [4, 1, 1], [7, 1, 1]]
 ```
 ####8. Addition
 ```javascript
 var B = matrix([[3, 4, 5], [6, 7, 8], [9, 10, 11]]);
-A().add(B); // returns [[4, 6, 8],[10, 12, 14], [16, 18, 20]]
+A.add(B); // returns [[4, 6, 8],[10, 12, 14], [16, 18, 20]]
 ```
 ####9. Subtraction
 ```javascript
-B().sub(A); // returns [[2, 2, 2], [2, 2, 2], [2, 2, 2]]
+B.sub(A); // returns [[2, 2, 2], [2, 2, 2], [2, 2, 2]]
 ```
 ####10. Multiplication
 ```javascript
-A().mul(B); // returns [[3, 8, 15], [24, 35, 48], [56, 80, 99]]
+A.mul(B); // returns [[3, 8, 15], [24, 35, 48], [56, 80, 99]]
 ```
 ####11. Division
 ```javascript
-A().div(B); // returns [[0.33, 0.5, 0.6], [0.66, 0.71, 0.75], [0.77, 0.8, 0.81]]
+A.div(B); // returns [[0.33, 0.5, 0.6], [0.66, 0.71, 0.75], [0.77, 0.8, 0.81]]
 ```
 ####12. Product
 ```javascript
-A().prod(B); // returns [[42, 48, 54], [96, 111, 126], [150, 174, 198]]
+A.prod(B); // returns [[42, 48, 54], [96, 111, 126], [150, 174, 198]]
 ```
 ####13. Transpose
 ```javascript
-A().trans(); // returns [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+A.trans(); // returns [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
 ####14. Determinant*
 ```javascript
-A().det(); // returns 0
+A.det(); // returns 0
 ```
 ####15. Inverse*
 Should be invertible
 ```javascript
 M = matrix([[1, 3, 3], [1, 4, 3], [1, 3 ,4]]
-M().inv(); // returns [[7, -3, -3], [-1, 1, 0], [-1, 0 ,1]]
+M.inv(); // returns [[7, -3, -3], [-1, 1, 0], [-1, 0 ,1]]
 ```
 
 __* Under Development__
