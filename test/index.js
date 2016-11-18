@@ -80,4 +80,9 @@ describe('Matrix operations', () => {
        assert.deepEqual(mat.trans(), [[1, 4], [2, 5], [3, 6]]);
        assert.deepEqual(mat1.trans(), [[1, 4, 7], [2, 5, 8], [3, 6, 9]]); 
     });
+
+    it('should return the determinant', () => {
+        assert.equal(mat1.det(), 0);
+        assert.equal(matrix([[5, 4, 7], [4, 8, 2], [9, 0, 4]]).det(), -336);
+    });
 });

@@ -72,9 +72,10 @@ A.prod(B); // returns [[42, 48, 54], [96, 111, 126], [150, 174, 198]]
 ```javascript
 A.trans(); // returns [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ```
-####14. Determinant*
+####14. Determinant
 ```javascript
-A.det(); // returns 0
+var C = matrix([[5, 4, 7], [4, 8, 2], [9, 0, 4]]);
+C.det(); // returns -336
 ```
 ####15. Inverse*
 Should be invertible
