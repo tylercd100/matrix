@@ -84,6 +84,7 @@ describe('Matrix operations', () => {
     it('should return the determinant', () => {
         assert.equal(mat1.det(), 0);
         assert.equal(matrix([[8, 4, 3], [8, 1, 1], [6, 3, 4]]).det(), -42);
+        assert.equal(matrix([[3, 4, 7], [0, 0, 6], [8, 3, 2]]).det(), 138);
         assert.equal(matrix([[5, 4, 7], [4, 8, 2], [9, 0, 4]]).det(), -336);
     });
 });
