@@ -18,8 +18,14 @@ describe('rational operations', () => {
 
     it('should multiply two inverse rational numbers to return 1', () => {
         let result = rational(4, 5).mul(rational(5, 4));
+        let result2 = rational(-1,1).mul(rational(8, 1));
+        let result3 = rational(-6, 8).mul(rational(8, 1));
         assert.equal(result.num, 1);
         assert.equal(result.den, 1);
+        assert.equal(result2.num, -8);
+        assert.equal(result2.den, 1);
+        assert.equal(result3.num, -6);
+        assert.equal(result3.den, 1);
     });
 
     it('should multiply two rational numbers with same numerator and denominator', () => {
