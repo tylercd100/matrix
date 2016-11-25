@@ -77,11 +77,9 @@ A.trans(); // returns [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 var C = matrix([[5, 4, 7], [4, 8, 2], [9, 0, 4]]);
 C.det(); // returns -336
 ```
-####15. Inverse*
+####15. Inverse
 Should be invertible
 ```javascript
 M = matrix([[1, 3, 3], [1, 4, 3], [1, 3 ,4]]
 M.inv(); // returns [[7, -3, -3], [-1, 1, 0], [-1, 0 ,1]]
 ```
-
-__* Under Development__
