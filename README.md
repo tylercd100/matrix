@@ -20,11 +20,11 @@ A(0); // returns [1, 2, 3]
 ```
 #### 3. Column
 ```javascript
-A([], 0); // returns [[1][4][7]]
+A([], 0); // returns [[1], [4], [7]]
 ```
 #### 4. Element
 ```javascript
-A(1, 2); // returns 3
+A(1, 2); // returns 6
 ```
 #### 5. Range
 ```javascript
@@ -50,7 +50,7 @@ A.set([], [1,2]).to(1); // returns [[1, 1, 1], [4, 1, 1], [7, 1, 1]]
 #### 8. Addition
 ```javascript
 var B = matrix([[3, 4, 5], [6, 7, 8], [9, 10, 11]]);
-A.add(B); // returns [[4, 6, 8],[10, 12, 14], [16, 18, 20]]
+A.add(B); // returns [[4, 6, 8], [10, 12, 14], [16, 18, 20]]
 ```
 #### 9. Subtraction
 ```javascript
@@ -80,6 +80,30 @@ C.det(); // returns -336
 #### 15. Inverse
 Should be invertible
 ```javascript
-M = matrix([[1, 3, 3], [1, 4, 3], [1, 3 ,4]]
+M = matrix([[1, 3, 3], [1, 4, 3], [1, 3 ,4]]);
 M.inv(); // returns [[7, -3, -3], [-1, 1, 0], [-1, 0 ,1]]
+```
+
+#### 16. Merge
+Merges two matrices in all directions
+
+* Left
+```javascript
+M = matrix([[3, 4], [7, 8]]);
+M.merge.left([[1, 2], [5, 6]]); // returns [[1, 2, 3, 4], [5, 6, 7, 8]]
+```
+* Right
+```javascript
+M = matrix([[1, 2], [5, 6]]);
+M.merge.right([[3, 4], [7, 8]]); // returns [[1, 2, 3, 4], [5, 6, 7, 8]]
+```
+* Top
+```javascript
+M = matrix([5, 6, 7, 8]);
+M.merge.top([1, 2, 3, 4]); // returns [[1, 2, 3, 4], [5, 6, 7, 8]]
+```
+* Bottom
+```javascript
+M = matrix([1, 2, 3 ,4]);
+M.merge.bottom([5, 6, 7, 8]); // returns [[1, 2, 3, 4], [5, 6, 7, 8]]
 ```

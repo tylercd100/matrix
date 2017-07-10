@@ -110,4 +110,26 @@ describe('Matrix operations', () => {
                 [0, 0.16666666666666666, 0]
             ]);
     });
+
+    it('should merge two matrices', () => {
+        // top
+        assert.deepEqual(mat.merge.top([11, 12, 13]), [[11, 12, 13], [1, 2, 3], [4, 5, 6]]);
+        assert.deepEqual(matrix([2, 3, 4]).merge.top([1, 2, 3]), [[1, 2, 3], [2, 3, 4]]);
+        assert.deepEqual(matrix([2, 3, 4]).merge.top([[1, 2, 3],[4, 5, 6]]), [[1, 2, 3], [4, 5, 6], [2, 3, 4]]);
+
+        // bottom
+        assert.deepEqual(mat1.merge.bottom([11, 12, 13]), [[1, 2, 3], [4, 5, 6], [7, 8, 9], [11, 12, 13]]);
+        assert.deepEqual(matrix([2, 3, 4]).merge.bottom([1, 2, 3]), [[2, 3, 4], [1, 2, 3]]);
+        assert.deepEqual(matrix([2, 3, 4]).merge.bottom([[1, 2, 3],[4, 5, 6]]), [[2, 3, 4], [1, 2, 3], [4, 5, 6]]);
+
+        // left
+        assert.deepEqual(matrix([[1], [3], [5]]).merge.left([[2], [4], [6]]), [[2, 1], [4, 3], [6, 5]]);
+        assert.deepEqual(matrix([5, 6, 7]).merge.left([1, 2, 3, 4]), [1, 2, 3, 4, 5, 6, 7]);
+        assert.deepEqual(matrix([[2, 4], [5, 5]]).merge.left([[1, 1], [1, 1]]), [[1, 1, 2, 4], [1, 1, 5, 5]]);
+
+        // right
+        assert.deepEqual(matrix([[1], [3], [5]]).merge.right([[2], [4], [6]]), [[1, 2], [3, 4], [5, 6]]);
+        assert.deepEqual(matrix([1, 2, 3, 4]).merge.right([5, 6, 7]), [1, 2, 3, 4, 5, 6, 7]);
+        assert.deepEqual(matrix([[2, 4], [5, 5]]).merge.right([[1, 1], [1, 1]]), [[2, 4, 1, 1], [5, 5, 1, 1]]);
+    });
 });
