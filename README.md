@@ -117,7 +117,6 @@ M.map(x => x*x); // returns [1, 4, 9]
 > This example shows the arguments provided to the function  
 ```javascript
 M = matrix([[1, 2], [3, 4]]);
-M.map(function(value, row, col, mat) {
-    return value * col
-}); // returns [[0, 2], [0, 4]]
+M.map((value, row, col, mat) => value * col);
+// returns [[0, 2], [0, 4]]
 ```

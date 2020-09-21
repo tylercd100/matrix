@@ -9,7 +9,7 @@ it('should exist', () => {
 });
 
 it('should throw not array', () => {
-    assert.throws(matrix, 'Input should be of type array');
+    assert.throws(matrix, Error, 'Input should be of type array');
 });
 
 describe('Matrix operations', () => {
