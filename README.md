@@ -121,13 +121,13 @@ M.map((value, row, col, mat) => value * col);
 // returns [[0, 2], [0, 4]]
 ```
 
-#### 18. Equal
+#### 18. Equals
 Checks the equality of two matrices and returns a boolean. A matrix is equal to itself.
 ```javascript
 A = matrix([[1,2],[3,4]]);
 A.equals(A);
 // returns true
-B = matrix(([3,4], [1,2]));
+B = matrix([[3,4], [1,2]]);
 A.equals(B);
 // returns false
 ```
