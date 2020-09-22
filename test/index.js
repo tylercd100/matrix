@@ -139,4 +139,13 @@ describe('Matrix operations', () => {
             [[1, 2*2, 3*3], [4*4, 5*5, 6*6], [7*7, 8*8, 9*9]]);
         assert.deepEqual(matrix([1, 2, 3]).map(square), [1, 2*2, 3*3]);
     });
+
+    it('should check if two matrices are equal', () => {
+        let A = matrix([[1/3,2],[3/5,4]]);
+        let B = matrix([[1,2],[-1,3]]);
+        let C = matrix([[1/3, 4, 5/9], [3/7, Math.E, Math.PI]]);
+        assert.equal(A.equals(A), true);
+        assert.equal(A.equals(B), false);
+        assert.equal(C.equals(C), true);
+    });
 });
